@@ -22,7 +22,7 @@
 <div id="mapid"></div>
 
 <script>
-    var mymap = L.map('mapid').setView([52.23, 21.0], 14);
+    var mymap = L.map('mapid').setView([52.17, 21.0], 12);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(mymap);
@@ -35,7 +35,6 @@
         const track = new L.KML(kml);
         mymap.addLayer(track);
         const bounds = track.getBounds();
-        mymap.fitBounds(bounds);
     })
 </script>
 </body>
