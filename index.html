@@ -15,14 +15,21 @@
             crossorigin=""></script>
     <script src="js/L.KLM.js"></script>
     <style>
-        #mapid { height: 1400px; }
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #mapid {
+            height: 100%;
+            width: 100vw;
+        }
     </style>
 </head>
 <body>
 <div id="mapid"></div>
 
 <script>
-    var mymap = L.map('mapid').setView([52.17, 21.0], 12);
+    var mymap = L.map('mapid').setView([52.17, 21.0], 15);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(mymap);
@@ -35,6 +42,7 @@
         const track = new L.KML(kml);
         mymap.addLayer(track);
         const bounds = track.getBounds();
+        mymap.fitBounds(bounds)
     })
 </script>
 </body>
