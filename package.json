@@ -20,5 +20,8 @@
   "dependencies": {
     "leaflet": "^1.6.0",
     "leaflet-kml": "^1.0.1"
+  },
+  "devDependencies": {
+    "jshint": "^2.11.0"
   }
 }
