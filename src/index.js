@@ -19,7 +19,7 @@ let map = document.createElement('div');
 map.id = "mapid";
 document.body.appendChild(map);
 
-var mymap = L.map('mapid').setView([52.17, 21.0], 15);
+var mymap = L.map('mapid').setView([52.244, 21.041], 13);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(mymap);
@@ -42,8 +42,19 @@ fetch('//localhost:8080/types')
 function showFeatures(featureCollection) {
     for (const feature of featureCollection) {
         L.geoJson(feature,{
+            pointToLayer: (feature, latLng) => {
+                return L.marker(latLng,{
+                    icon: L.icon({
+                            iconUrl: MARKERS[feature.properties.type].iconUrl,
+                            iconSize:     [32, 32]
+                        }),
+                    title: feature.properties.name,
+                    });
+            },
 
-        }).addTo(mymap)
+        }).
+        bindPopup(feature.properties.description).
+        addTo(mymap)
     }
     return undefined;
 }
