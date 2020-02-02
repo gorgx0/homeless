@@ -53,7 +53,7 @@ function showFeatures(featureCollection) {
             },
 
         }).
-        bindPopup(feature.properties.description).
+        bindPopup('<h2>' + feature.properties.name+'</h2>' + feature.properties.description).
         addTo(mymap)
     }
     return undefined;
