@@ -16,16 +16,4 @@ public class HomelessBackendApplication {
 	}
 
 
-	@Bean
-	public DataSource getDataSource() throws SQLException {
-		DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
-		dataSourceBuilder.driverClassName("org.h2.Driver");
-		dataSourceBuilder.url("jdbc:h2:tcp://localhost:5555/bazada");
-		dataSourceBuilder.username("SA");
-		dataSourceBuilder.password("");
-		DataSource dataSource = dataSourceBuilder.build();
-		DataSource wrappedDataSource = SFSUtilities.wrapSpatialDataSource(dataSource);
-		return wrappedDataSource;
-	}
-
 }
