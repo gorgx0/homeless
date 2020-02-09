@@ -23,6 +23,7 @@ public class Place {
     @JsonSerialize(using = GeometrySerializer.class)
     @JsonDeserialize(contentUsing = GeometryDeserializer.class)
     @Column(columnDefinition = "GEOMETRY")
+    @Convert(converter = GeometryAttributeCOnverter.class)
     private Geometry location;
     private String typeShortname;
 }
