@@ -9,5 +9,4 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "places", path = "places")
 public interface PlacesRestRepository extends CrudRepository<Place, Long> {
-    List<Place> findAllByTypeShortname(String typeShortName);
 }
