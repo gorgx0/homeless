@@ -49,6 +49,8 @@ function showFeatures(featureCollection) {
                             iconSize:     [32, 32]
                         }),
                     title: feature.properties.name,
+                    draggable: true,
+                    autoPan: true
                     });
             },
 
