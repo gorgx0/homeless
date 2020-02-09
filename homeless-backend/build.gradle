@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.gorg'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '8'
 
 configurations {
 	developmentOnly
@@ -38,6 +38,9 @@ dependencies {
 	}
 	compile 'mil.nga.sf:sf-geojson:2.0.3'
 	compile 'org.skyscreamer:jsonassert:1.5.0'
+	implementation 'org.hibernate:hibernate-spatial:5.4.10.Final'
+//	implementation 'com.bedatadriven:jackson-datatype-jts:2.4'
+	implementation 'org.n52.jackson:jackson-datatype-jts:1.2.3'
 }
 
 test {

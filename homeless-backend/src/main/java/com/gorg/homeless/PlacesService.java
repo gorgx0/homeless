@@ -60,4 +60,7 @@ public class PlacesService {
         );
     }
 
+//    public TypeOfPlace addNewPlace() {
+//        jdbcTemplate.query("insert into L")
+//    }
 }

@@ -1,5 +1,6 @@
 package com.gorg.homeless;
 import org.h2gis.utilities.SFSUtilities;
+import org.n52.jackson.datatype.jts.JtsModule;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -16,4 +17,8 @@ public class HomelessBackendApplication {
 	}
 
 
+	@Bean
+	public JtsModule jtsModule() {
+		return new JtsModule();
+	}
 }
