@@ -4,17 +4,23 @@ import mil.nga.sf.geojson.Feature;
 import mil.nga.sf.geojson.FeatureCollection;
 import mil.nga.sf.geojson.Point;
 import mil.nga.sf.geojson.Position;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 @Service
 public class PlacesService {
 
     private final JdbcTemplate jdbcTemplate;
+    @Autowired
+    private PlacesRestRepository placesRestRepository;
+
 
     public PlacesService(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
