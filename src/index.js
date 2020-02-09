@@ -6,6 +6,9 @@ import './index.css'
 import marker from 'leaflet/dist/images/marker-icon.png';
 import marker2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 delete L.Icon.Default.prototype._getIconUrl;
 
