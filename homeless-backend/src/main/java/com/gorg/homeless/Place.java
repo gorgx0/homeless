@@ -31,15 +31,15 @@ public class Place {
     private String typeShortname;
 
 
-//    public Feature getFeature() {
-//        Feature feature = new Feature();
-//        Map<String, Object> properties = new HashMap<>();
-//        properties.put("id", id);
-//        properties.put("name", name);
-//        properties.put("description", description);
-//        properties.put("type", typeShortname);
-//        feature.setProperties(properties);
-//        feature.setGeometry(new Point(new Position(location.getCoordinates().getX(),location.getCoordinates().getY())));
-//        return feature;
-//    }
+    public Feature getFeature() {
+        Feature feature = new Feature();
+        Map<String, Object> properties = new HashMap<>();
+        properties.put("id", id);
+        properties.put("name", name);
+        properties.put("description", description);
+        properties.put("type", typeShortname);
+        feature.setProperties(properties);
+        feature.setGeometry(new Point(new Position(location.getCoordinates()[0].x,location.getCoordinates()[0].getY())));
+        return feature;
+    }
 }
