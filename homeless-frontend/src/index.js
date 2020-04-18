@@ -1,5 +1,4 @@
 import L from 'leaflet';
-import KML from 'leaflet-kml';
 import 'leaflet/dist/leaflet.css';
 import './index.css'
 // stupid hack so that leaflet's images work after going through webpack
@@ -41,20 +40,18 @@ fetch('//localhost:8080/types')
 
 function showFeatures(featureCollection) {
     for (const feature of featureCollection) {
-        L.geoJson(feature,{
+        L.geoJson(feature, {
             pointToLayer: (feature, latLng) => {
-                return L.marker(latLng,{
+                return L.marker(latLng, {
                     icon: L.icon({
-                            iconUrl: MARKERS[feature.properties.type].iconUrl,
-                            iconSize:     [32, 32]
-                        }),
+                        iconUrl: MARKERS[feature.properties.type].iconUrl,
+                        iconSize: [32, 32]
+                    }),
                     title: feature.properties.name,
-                    });
+                });
             },
 
-        }).
-        bindPopup('<h2>' + feature.properties.name+'</h2>' + feature.properties.description).
-        addTo(mymap)
+        }).bindPopup('<h2>' + feature.properties.name + '</h2>' + feature.properties.description).addTo(mymap)
     }
     return undefined;
 }
