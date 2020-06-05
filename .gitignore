@@ -1,6 +1,7 @@
-node_modules/
+homeless-frontend/node_modules/
 dist/
 target/
+.cache/
 
 HELP.md
 .gradle
@@ -8,6 +9,8 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
+homeless-backend/src/main/resources/static/
+*.log
 
 ### IntelliJ IDEA ###
 .idea
