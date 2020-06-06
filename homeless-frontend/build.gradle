@@ -1,0 +1,10 @@
+import org.ysb33r.gradle.nodejs.tasks.NpmTask
+
+plugins {
+    id 'org.ysb33r.nodejs.npm' version '0.9.3'
+}
+
+task buildFront(type: NpmTask) {
+    command 'run'
+    cmdArgs 'build'
+}

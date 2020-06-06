@@ -1,0 +1,3 @@
+rootProject.name = 'homeless'
+include ':homeless-frontend'
+include ':homeless-backend'

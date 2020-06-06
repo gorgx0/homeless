@@ -1,0 +1,4 @@
+task copyFrontToBack(type: Copy, dependsOn: ':homeless-frontend:buildFront') {
+    from(project(":homeless-frontend").getProjectDir().path + '/dist')
+    into(project(":homeless-backend").getProjectDir().path + '/src/main/resources/static')
+}
